@@ -1,0 +1,36 @@
+.jumbotron
+{ background-color: teal;
+text-align: center;
+font-size: 40px;
+}
+.col-md-6{
+height:600px;
+width:400px;}
+
+.col-md-6 img{
+height: 400px;
+width: 400px;
+}
+ #imgs:hover {
+filter:blur(2px);
+transition: all 0.2s ease-in-out;
+z-index:1:
+border-radius: 2px solid black ;
+}
+.team-member{
+height: 400px;
+width: 400px;
+}
+h4,p{
+padding-top: 10px;
+text-align: center;}
+#imgs:hover  h4,p{
+font-size:medium;
+}
+
+.list-inline{
+text-align:center; 
+}
+.col-sm-12{
+padding-left: 0px;}
+

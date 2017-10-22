@@ -1,0 +1,32 @@
+{% extends 'members/base.html' %}
+{% block title %}Enquiry{% endblock %}
+{% block login_active %}active{% endblock %}
+
+{% block body %}
+
+	<div class="container">
+		<div class="row">
+             <div class="col-md-3" > </div>
+			<div class="col-md-6 col-sm-12">
+				<h1 style="margin-top:20px; text-align:center; color:teal;">Enquiry</h1>
+				<br><br>
+				<form style="" action="{% url 'home:forum' %}" method="post" class="wow fadeInUp form-group" data-wow-delay="0.6s">
+					     {% csrf_token %}
+
+							<input type="text"  placeholder="Name" name="name"  class="form-control"><br>
+
+
+						<input type="email" class="form-control" placeholder="Email" name="email"><br>
+
+
+						<textarea class="form-control" placeholder="Message" rows="7" name="message" style="height:200px; width:100%;"></textarea>
+
+<br>
+					<button class="btn btn-primary btn-block " type="submit"><span class="glyphicon glyphicon-send"></span>&nbsp;&nbsp;SEND US</button>
+
+
+				</form>
+		       </div>
+			</div>
+	      </div>
+{% endblock %}

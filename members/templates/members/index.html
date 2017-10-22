@@ -1,0 +1,53 @@
+{% extends 'members/base.html' %}
+{% block title%}members{% endblock %} 
+{% block body %}
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'members/style.css' %}" />
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<div class="jumbotron">
+    <div class="row"><b>Our Team </b>
+    </div>
+</div>
+{% if all_members %}
+{% for member in all_members %}
+   <div class="row" >
+	   {% if forloop.first %}
+			<div class="col-md-6 col-sm-12 col-md-offset-4" style="padding-left:20px;" >
+				<div class="team-member">
+					<img src="{{member.member_image.url}}" class="img-responsive img-circle" alt="{{member.member_image.url}}" id="imgs">
+					<h4>{{member.member_name}}</h4>
+					<p class="text-muted">{{member.member_post}}</p>
+					<p class="text-muted"></p>
+					<ul class="list-inline social-buttons">
+						<li><a href="#"><i class="fa fa-envelope"></i></a></li>
+						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+					</ul>
+				</div>
+			</div>
+	   {% else %}
+			<div class="col-md-6 col-sm-12 col-md-offset-4" style="padding-left:20px;" >
+				<div class="team-member">
+					<img src="{{member.member_image.url}}" class="img-responsive img-circle" alt="{{member.member_image.url}}" id="imgs">
+					<h4>{{member.member_name}}</h4>
+					<p class="text-muted">{{member.member_post}}</p>
+					<p class="text-muted"></p>
+					<ul class="list-inline social-buttons">
+						<li><a href="#"><i class="fa fa-envelope"></i></a></li>
+						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+					</ul>
+				</div>
+			</div>
+	   {% endif %}
+  </div>
+
+{% endfor %}
+{% else %}
+<h2> you don't have any records </h2>
+{% endif %}
+<br/><br/>
+{% endblock %}

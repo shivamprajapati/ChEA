@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<head>
+<title>{% block title %}
+{% endblock %}
+</title>
+<head>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+<div class="container-fluid">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a href="{% url 'home:index' %}" class="navbar-brand">ChEA &nbsp;| IIChE </a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+</div>
+<div class="collapse navbar-collapse" id="mynavbar">
+<ul class="nav navbar-nav">
+<li><a href="{% url 'home:index' %}">HOME</a> </li>
+<li><a href="{% url 'members:index' %}">MEMBERS</a> </li>
+<li><a href="#">GUEST LECTURES</a> </li>
+</ul>
+	<ul class="nav navbar-nav navbar-right">
+        <li><a href="{% url 'home:register' %}" ><span class="glyphicon glyphicon-user"> </span>&nbsp;REGISTER</a></li>
+		<li><a href="{% url 'home:login' %}" ><span class="glyphicon glyphicon-log-in"> </span>&nbsp;LOGIN</a></li>
+
+	</ul>
+</div>
+</div>
+
+</nav>
+{% block body %}
+{% endblock %}
+<footer>
+<br><br><br>
+
+<hr>
+<h6 style="color:blue; text-align: center;"> please like us on</h6>
+<div class="footer" style="text-align:center;">
+
+<a href="https://www.facebook.com/ChEANITW/" style="text-align: center;"><i class="fa fa-facebook fa-center fa-2x" area-hidden="true"> </i></a>&nbsp;
+<a href="#" ><i class="fa fa-linkedin fa-center fa-2x" area-hidden="true"> </i></a>&nbsp;
+<a href="#" ><i class="fa fa-envelope fa-center fa-2x" area-hidden="true"> </i></a>&nbsp;
+<a href="#"><i class="fa fa-twitter fa-center fa-2x" area-hidden="true"> </i></a>
+</div>
+</footer>
+</body>
+
+</html>

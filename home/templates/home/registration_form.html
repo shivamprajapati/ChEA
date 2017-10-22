@@ -1,0 +1,54 @@
+{% extends 'home/base_visitor.html' %}
+{% block title %}Register{% endblock %}
+{% block register_active %}active{% endblock %}
+
+{% block body %}
+<div class="container">
+
+
+
+
+    <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+
+            <h2 style="text-align:center;">Register</h2>
+          <form action="{% url 'home:register' %}" method="POST">
+              {% csrf_token %}
+              <div class="form-group">
+    <label for="username">Username:</label>
+    <input type="text" class="form-control" name="username" id="username">
+  </div><br>
+  <div class="form-group">
+    <label for="email">Email address:</label>
+    <input type="email" class="form-control" name="email" id="email">
+  </div><br>
+  <div class="form-group">
+    <label for="password">Password:</label>
+    <input type="password" class="form-control" name="password" id="password">
+  </div><br>
+              <div class="form-group">
+    <label for="password">Confirm Password:</label>
+    <input type="password" class="form-control" name="conf-password">
+  </div><br>
+  <div class="form-group">
+    <label for="mobile">Mobile No:</label>
+    <input type="text" class="form-control" name="mobile" id="mobile">
+  </div><br><br>
+  <button type="submit" class="btn btn-primary btn-block">Submit</button>
+</form><br><br>
+             <div class="footer">
+                    Already have an account? <a href="{% url 'home:login' %}">Click here</a> to log in.
+                </div>
+
+</div>
+</div>
+</div>
+<br><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'members/base.html' %} 
+{% block title%}magzines {% endblock %} 
+{% block body %}
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'magzine/style.css' %}" />
+    <div class="jumbotron" > Our Magzines 
+                                                                       </div>
+{% for mags in all_magzines %}
+<div class="row" id="mags">
+<div class="col-lg-5 col-sm-12"><div class="gallery">
+<a target="_balnk" href="#">
+                 <img src="{{mags.magzine_coverpage.url }}"  alt="turbulenz" class="img-responsive" /> </a>
+                 <div class="desc"> <b> {{mags.magzine_name }} </b></div>
+</div> </div>
+<div class="col-lg-1"></div>
+<div class="col-lg-5 col-sm-12"> 
+<div class="gallery">
+<a target="_balnk" href="#">
+                 <img src="{{mags.magzine_coverpage.url }}"  alt="turbulenz" class="img-responsive" /> </a>
+                 <div class="desc">  {{mags.magzine_name }} </div>
+</div>
+</div>
+</div>
+{% endfor  %}
+{% endblock %}

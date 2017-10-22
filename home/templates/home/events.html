@@ -1,0 +1,42 @@
+{% extends 'members/base.html' %}
+<span class="glyphicon glyphicon-picture">{% block title %}Events{% endblock %}</span>
+{% block register_active %}active{% endblock %}
+
+{% block body %}
+{% if event %}
+<style>
+#border:hover{
+
+}
+#image:hover{
+ border: 2px solid #777;
+filter:blur(1px) ;
+transition: all 0.2s ease-in-out;}
+</style>
+		<div class="row">
+			<div class="col-md-12 col-sm-12">
+				<!-- ISO section -->
+				<div class="iso-section">
+						<h3 style="text-align:center;">{{event.event_title}}</h3><hr>
+			              <p style="color:black; font-weight:thin ;text-align:center;">
+							  Department orientation is organised in second week of august to make freshers aware of available
+							  </br>opportunities and introducing them to profesors and the council</p>
+					 <div class="iso-box-section wow fadeIn" data-wow-delay="0.9s">
+               			<div class="iso-box-wrapper col4-iso-box" style="padding-left:0px;" >
+                              {% for eve in event.eve_pics_set.all %}
+               				 <div class="iso-box ori  col-lg-4 col-md-4 col-sm-6" style="padding-left:0px;" id="border">
+               				 	<a href="{{eve.eve_pics.url}}" style="padding-left:0px;" data-lightbox-gallery="portfolio-gallery">
+									<img src="{{eve.eve_pics.url}}"  width="420" height="320"  alt="portfolio img" id="image" style="padding-left:0px;">&nbsp;</a>
+               				 </div>{% endfor  %}
+						</div>
+					 </div>
+				</div>
+			</div>
+		</div>
+
+
+{% else %}
+<h3> you have no pics </h3>
+{% endif %}
+
+{% endblock %}
